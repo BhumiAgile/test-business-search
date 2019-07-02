@@ -11,7 +11,6 @@
 * [Flow of the Script](#flow-of-the-script)
 * [Business Data Formatting Rules](#business-data-formatting-rules)
 * [Manage Data](#manage-data)
-* [Conclusion](#conclusion)
 
 ## Getting Started
 
@@ -176,6 +175,3 @@ Normally one should always think about the formatting of the data that is saved.
 * Data management is the most important part of this entire process. The script first cleans existing data using formatting rules and then calls APIs to get missing data. The response data from the respective APIs will also be cleaned using given formatting rules.
 
 * All business data will be stored into local CSV file first to manage the cleaning process. After that, it will be stored in the spreadsheet. At last, data will be moved into the air table. This way all data will be managed and organized.
-
-## Conclusion
-
