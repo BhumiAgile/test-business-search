@@ -1,9 +1,5 @@
 # Business Search
 
- ```diff
- +((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}
- ```
-
  **Data scrubbing** refers to the procedure of modifying or removing incomplete, incorrect, inaccurately formatted, or repeated data in a database or record set. The key objective of data scrubbing is to make the data more accurate and consistent. Data scrubbing is also referred to as data cleansing.
 
 ## Table of contents
@@ -15,6 +11,7 @@
 * [Flow of the Script](#flow-of-the-script)
 * [Business Data Formatting Rules](#business-data-formatting-rules)
 * [Manage Data](#manage-data)
+* [Conclusion](#conclusion)
 
 ## Getting Started
 
@@ -33,21 +30,22 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion ste
 
 2. Next activate the virtual environment.
 
-    > In Ubuntu
-        ```cmd
-        $ source myvenv/bin/activate
-        ```
+- In Ubuntu
+    ```
+    $ source myvenv/bin/activate
+    ```
 
-    > In Window
-        ```cmd
-        $ \myvenv\Scripts\activate
-        ```
+- In Window
+    ```
+    $ \myvenv\Scripts\activate
+    ```
 
 3. Now install all the required packages and dependancies from the requirements.txt file, which is given in the project directory. Use following command for it.
 
     ```cmd
     $ pip install -r requirements.txt
     ```
+
 
 ## Set API Credentials
 
@@ -62,60 +60,61 @@ Here, we will need to perform searching for the business data of the company lik
 * Melissa API
 * Hunter API
 
-All the credentials should be stored into the **config.ini** file, located into the project directory.
+All the credentials should be stored into the `config.ini` file, located into the project directory.
 
 To get api_key or access_token for the perticular API, the user has to signup in the perticular account. From the account dashboard, user will be able to get the access_key or token or api_key. Please do not share these credentials with other.
 
 ### Details of the API account
 
->Google Place API
+#### 1. Google Place API
 
 - Make a new project and get the API key. For the entire process, the user can follow the documentation from [here](https://developers.google.com/places/web-service/get-api-key).
 - Copy that **API key** and paste it into the `config.ini` file.
 
-    ```
+    ```ini
     [GOOGLE]
     api_key = #########################
     ```
 
->Facebook Place Search API
+#### 2. Facebook Place Search API
 
 - Create an app and get access token. The user can follow the documentation from [here](https://developers.facebook.com/docs/facebook-login/access-tokens/).
 
 - Copy that **Access Token** and paste it into the `config.ini` file.
 
-    ```
+    ```ini
     [FACEBOOK]
     access_token = #######################
     ```
 
->Yelp API
+#### 3. Yelp API
 
 - The user can get the API key from [here](https://www.yelp.com/login?return_url=%2Fdevelopers%2Fv3%2Fmanage_app). In the `config.ini` file save it as follows.
 
-    ```
+    ```ini
     [YELP]
     api_key = #############################
     ```
 
->Melissa API
+#### 4. Melissa API
 
 - Find the license key from [here](https://www.melissa.com/user/user_account.aspx) and paste it into the `config.ini` file.
 - Set default count with 1000 as Melissa provides free 1000 credits per account.
 
-    ```
+    ```ini
     [MELISSA]
     license_key = ##########################
     count = 1000
     ```
 
->Hunter API
+#### 5. Hunter API
 
 - Find the license key from [here](https://hunter.io/api_keys) and paste it into the `config.ini` file.
 
-    ```
+    ```ini
     [HUNTER]
     api_key = ####################
+    count = 50
     ```
 
 Note: There is no need to set credentials for Yellow Pages API, BBB API and Google Search API.
@@ -124,15 +123,24 @@ Note: There is no need to set credentials for Yellow Pages API, BBB API and Goog
 
 Here, the regex code is used to find out business data availability into our data source(available business data). Based on this data availability check, the script will start the process to get missing data using various APIs.
 
->**Email Search Regex**
-    ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
+- **Email Search Regex**
 
->**Domain Search Regex**
-    http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+
+    ```python
+    r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    ```
 
->**Phone Search Regex**
-    ((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}
+- **Domain Search Regex**<br>
 
+    ```python
+    r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    ```
+
+- **Phone Search Regex**
+
+    ```python
+    r'((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}'
+    ```
+    
 ## Flow of the Script
 
 * The process of collecting lead data includes various API. In our script, we use API to find missing business data (Domain, Name, Email, Phone, Address) in particular order.
@@ -150,7 +158,7 @@ Here, the regex code is used to find out business data availability into our dat
 
 Normally one should always think about the formatting of the data that is saved. The main goal of this project is to clean or format the business data. For that, the script handles various formatting cases such as data should be in a proper case, all abbreviations should be in the upper case, etc.
 
->Company Name / Address Formatting Rules
+### Company Name / Address Formatting Rules
 
 | Formatting Rule | Regex | Example |
 | --------------- |------ | :------ |
@@ -178,3 +186,6 @@ Normally one should always think about the formatting of the data that is saved.
 * Data management is the most important part of this entire process. The script first cleans existing data using formatting rules and then calls APIs to get missing data. The response data from the respective APIs will also be cleaned using given formatting rules.
 
 * All business data will be stored into local CSV file first to manage the cleaning process. After that, it will be stored in the spreadsheet. At last, data will be moved into the air table. This way all data will be managed and organized.
+
+## Conclusion
+
