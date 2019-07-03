@@ -5,7 +5,7 @@
 ## Table of contents
 
 * [Getting Started](#getting-started)
-* [Pre Requirements](#pre-requirements)
+* [Project Dependency and Installation](#project-dependency-and-installation)
 * [Set API Credentials](#set-api-credentials)
 * [Data Availability Check](#data-availability-check)
 * [Flow of the Script](#flow-of-the-script)
@@ -15,11 +15,16 @@
 
 ## Getting Started
 
-Here, the user has to download the actual data source for the project of business search. This includes the main script to clean and format data and also contains API collection to find or get missing required business data(email, domain, phone number, address, etc.) of the company from the web.
+The user has to download the actual data source for the project of business search. This includes the main script to clean and format data and also contains API collection to find or get missing required business data(email, domain, phone number, address, etc.) of the company from the web.
 
-## Pre Requirements
+## Project Dependency and Installation
 
-It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installation steps are given below.
+The main required project dependencies are,
+- Python 3.X
+- pip3
+- virtualenv
+
+The installation steps are as follows,
 
 1. First, create a virtual environment in your working directory using the given command.
 
@@ -46,6 +51,11 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installation st
     $ pip install -r requirements.txt
     ```
 
+4. Run the script.
+
+    ```cmd
+    $ python3 script.py
+    ```
 
 ## Set API Credentials
 
