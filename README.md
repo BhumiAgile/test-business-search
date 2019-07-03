@@ -44,7 +44,7 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion ste
     ```cmd
     $ pip install -r requirements.txt
     ```
-<font color="green">hello</font>
+<span style="color: green"> Some green text </span>
 
 ## Set API Credentials
 
