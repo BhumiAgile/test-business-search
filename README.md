@@ -1,5 +1,7 @@
 # Business Search
 
+<p><font color="red">hello</font></p>
+
  **Data scrubbing** refers to the procedure of modifying or removing incomplete, incorrect, inaccurately formatted, or repeated data in a database or record set. The key objective of data scrubbing is to make the data more accurate and consistent. Data scrubbing is also referred to as data cleansing.
 
 ## Table of contents
@@ -44,9 +46,6 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion ste
     ```cmd
     $ pip install -r requirements.txt
     ```
-<html><body>
-    <span style="color: green"> Some green text </span>
-</body></html>
 
 ## Set API Credentials
 
