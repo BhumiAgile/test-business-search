@@ -1,6 +1,7 @@
 # Business Search
-
-<p><font color="red">hello</font></p>
+ ```diff
+    +((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}
+    ```
 
  **Data scrubbing** refers to the procedure of modifying or removing incomplete, incorrect, inaccurately formatted, or repeated data in a database or record set. The key objective of data scrubbing is to make the data more accurate and consistent. Data scrubbing is also referred to as data cleansing.
 
