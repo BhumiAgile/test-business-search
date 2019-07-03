@@ -1,6 +1,6 @@
 # Business Search
 
- **Data scrubbing** refers to the procedure of modifying or removing incomplete, incorrect, inaccurately formatted, or repeated data in a database or record set. The key objective of data scrubbing is to make the data more accurate and consistent. Data scrubbing is also referred to as data cleansing.
+ **Data scrubbing** refers to the procedure of modifying or removing incomplete, incorrect, inaccurately formatted, or repeated data in a database or recordset. The key objective of data scrubbing is to make the data more accurate and consistent. Data scrubbing is also referred to as data cleansing.
 
 ## Table of contents
 
@@ -15,20 +15,20 @@
 
 ## Getting Started
 
-Here, the user has to download the actual data source for the project of business search. This includes the main script to clean and format data and also contains API collection to find or get missing required business data(email, domain, phone number, address etc.) of the company from the web.
+Here, the user has to download the actual data source for the project of business search. This includes the main script to clean and format data and also contains API collection to find or get missing required business data(email, domain, phone number, address, etc.) of the company from the web.
 
 ## Pre Requirements
 
-It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion steps are given below.
+It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installation steps are given below.
 
-1. First create virtual environment in your working directory using the given command.
+1. First, create a virtual environment in your working directory using the given command.
 
     ```cmd
     $ virtualenv myvenv -p python3
     ```
     Here, myvenv is the name of the virtual environment.
 
-2. Next activate the virtual environment.
+2. Next, activate the virtual environment.
 
 - In Ubuntu
     ```
@@ -40,7 +40,7 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion ste
     $ \myvenv\Scripts\activate
     ```
 
-3. Now install all the required packages and dependancies from the requirements.txt file, which is given in the project directory. Use following command for it.
+3. Now install all the required packages and dependencies from the `requirements.txt` file, which is given in the project directory. Use the following command for it.
 
     ```cmd
     $ pip install -r requirements.txt
@@ -49,7 +49,7 @@ It is required to use `Python 3.x`, `pip3` and `virtualenv`. The installtion ste
 
 ## Set API Credentials
 
-Here, we will need to perform searching for the business data of the company like, company address, phone number, emails, domain, etc. For that it is required to use various APIs to get missing business data. So we need credentials for the perticular API. The APIs used in this project are,
+Here, we will need to perform searching for the business data of the company like company address, phone number, emails, domain, etc. For that, it is required to use various APIs to get missing business data. So we need credentials for the particular API. The APIs used in this project are,
 
 * Google Place API
 * Facebook Place SEarch API
@@ -62,7 +62,7 @@ Here, we will need to perform searching for the business data of the company lik
 
 All the credentials should be stored into the `config.ini` file, located into the project directory.
 
-To get api_key or access_token for the perticular API, the user has to signup in the perticular account. From the account dashboard, user will be able to get the access_key or token or api_key. Please do not share these credentials with other.
+To get api_key or access_token for the particular API, the user has to signup in the particular account. From the account dashboard, the user will be able to get the access_key or token or api_key. Please do not share these credentials with others.
 
 ### Details of the API account
 
