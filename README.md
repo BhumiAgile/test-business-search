@@ -189,3 +189,6 @@ Normally one should always think about the formatting of the data that is saved.
 
 ## Conclusion
 
+- Accurate and updated data supports analytics and business intelligence that in turn provide organizations with resources for better decision-making and execution.
+
+- After properly completing the Data Cleaning steps, we’ll have a robust dataset that proves very beneficial in the further process. it improves data quality and increases overall productivity. Having correct information also helps reduce some unexpected costs.
