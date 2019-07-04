@@ -173,7 +173,7 @@ Normally one should always think about the formatting of the data that is saved.
 | Formatting Rule | Regex | Example |
 | --------------- |------ | :------ |
 | Maintain proper case(title case) for all company name | company_name.title() | **Input:** handyman networks<br />**Output:** Handyman Networks |
-| Combine Acronym by removing spaces in between | <code>(\s&#124;^)(?:[a-zA-Z]\.?(\s&#124;$)){2,}</code> | **Input:** 1)  U S A Handyman Networks<br />2)  U. S. A. Handyman Networks<br />**Output:** USA Handyman Networks |
+| Combine Acronym by removing spaces in between | ```(\s|^)(?:[a-zA-Z]\.?(\s|$)){2,}``` | **Input:** 1)  U S A Handyman Networks<br />2)  U. S. A. Handyman Networks<br />**Output:** USA Handyman Networks |
 | Words (Corp, corp., corporation) should be removed or <br />not from the company name | <code>(?i)\s(corp\.?&#124;corporation)$</code> | **Input:** 1) L & A CONSTRUCTION CORP 2) Club Corp<br />**Output:** 1) L&A Construction2) Club Corp|
 | Remove word from comapny name like, LLC PVT etc. | `-` | **Input:** Watermarke Homes L L C<br />**Output:** Watermarke Homes |
 | Find given words (which, dba, /, -) from company name <br />and remove this word and anything after this word | <code>(?i)\s(which&#124;wall&#124;dba&#124;-&#124;/)(\s&#124;$)</code> | **Input:** Quick Fix - The Sliding Door Repair<br />**Output:** Quick Fix| 
